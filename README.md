@@ -1,70 +1,42 @@
-# React.js and Tailwind CSS Assignment
+PLP Task Manager — React + Tailwind starter
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
+This repository contains a starter implementation for the Week 3 assignment: a Vite + React app styled with Tailwind CSS. It includes reusable components, a Task Manager (with localStorage persistence), and an API list that fetches posts from JSONPlaceholder.
 
-## Assignment Overview
+Local setup
+1. Ensure Node.js (v18+) is installed.
+2. From the project root run:
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm run dev
-   ```
-
-## Files Included
-
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
-
-## Requirements
-
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
-
-## Project Structure
-
-```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
+```powershell
+npm install
+npm run dev
 ```
 
-## Submission
+If your PowerShell blocks npm scripts (execution policy), run in cmd.exe or use `npm.cmd install`.
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+What I added/changed
+- `package.json` — scripts & deps for vite, react, tailwind
+- `index.html`, `src/main.jsx`, `src/index.css` — app entry and Tailwind imports
+- `tailwind.config.cjs`, `postcss.config.cjs` — Tailwind config
+- `src/context/ThemeContext.jsx` — theme provider (light/dark)
+- `src/hooks/useLocalStorage.js` — small reusable hook
+- `src/components/Button.jsx` — button component (existing, validated)
+- `src/components/TaskManager.jsx` — task manager (existing, validated)
+- `src/components/Navbar.jsx`, `Footer.jsx` — site chrome with theme switcher
+- `src/components/APIList.jsx` — fetch & display posts with pagination and search
+- `src/App.jsx` — wired to render Navbar, TaskManager, APIList, Footer
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
+Next steps
+- Run `npm install` and `npm run dev` locally to start the dev server.
+- Open http://localhost:5173 (or the port Vite reports).
+- Commit and push changes to your GitHub Classroom repo, then deploy to Vercel/Netlify.
 
-## Resources
+Notes & edge cases
+- localStorage may be unavailable if the browser blocks storage; the hooks include try/catch fallbacks.
+- The JSONPlaceholder fetch is unauthenticated and public; handle network failures in production.
 
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+If you want, I can:
+- Add unit tests (Jest + React Testing Library) for TaskManager and Button
+- Implement routing and separate pages for Tasks and Posts
+- Create a deployable production build and add a GitHub Actions workflow for auto-deploy
+
+Happy to continue — tell me which next task you'd like me to do (run the app locally, add routing, tests, or deploy wiring).
