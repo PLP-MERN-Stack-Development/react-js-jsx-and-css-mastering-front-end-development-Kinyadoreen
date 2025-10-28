@@ -34,3 +34,6 @@ Notes & edge cases
 - localStorage may be unavailable if the browser blocks storage; the hooks include try/catch fallbacks.
 - The JSONPlaceholder fetch is unauthenticated and public; handle network failures in production.
 
+DEPLOYMENT
+- https://app.netlify.com/projects/spontaneous-kataifi-5c6f63/deploys/69006affc79ae0328255137d
+
