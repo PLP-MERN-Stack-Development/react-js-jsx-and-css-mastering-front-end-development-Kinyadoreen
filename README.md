@@ -34,9 +34,3 @@ Notes & edge cases
 - localStorage may be unavailable if the browser blocks storage; the hooks include try/catch fallbacks.
 - The JSONPlaceholder fetch is unauthenticated and public; handle network failures in production.
 
-If you want, I can:
-- Add unit tests (Jest + React Testing Library) for TaskManager and Button
-- Implement routing and separate pages for Tasks and Posts
-- Create a deployable production build and add a GitHub Actions workflow for auto-deploy
-
-Happy to continue — tell me which next task you'd like me to do (run the app locally, add routing, tests, or deploy wiring).
